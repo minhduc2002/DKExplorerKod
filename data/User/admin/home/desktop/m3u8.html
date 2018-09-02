@@ -1,0 +1,42 @@
+<button onclick="SD()">480</button>
+<script>
+function SD() {
+window.document.getElementById("video").width = "720";
+window.document.getElementById("video").height = "480";
+}
+</script>
+<button onclick="HD()">720</button>
+<script>
+function HD() {
+window.document.getElementById("video").width = "1280";
+window.document.getElementById("video").height = "720";
+}
+</script>
+<button onclick="FULLHD()">1080</button>
+<script>
+function FULLHD() {
+window.document.getElementById("video").width = "1920";
+window.document.getElementById("video").height = "1080";
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video" width="1920" height="1080" controls> </video>
+<script>
+  var link = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+  if(Hls.isSupported()) {
+    var video = document.getElementById('video');
+    var hls = new Hls();
+    hls.loadSource(link);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = link;
+    video.addEventListener('canplay',function() {
+      video.play();
+    });
+  }
+</script>

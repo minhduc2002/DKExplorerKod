@@ -1,0 +1,38 @@
+<title>LoadURL</title>
+<link rel="icon" type="image/png" href="https://pre00.deviantart.net/89ed/th/pre/f/2013/193/f/6/firefox_blue_and_black_psd_by_wsaconato-d6d7xbn.png" />
+<head>
+<script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
+</head>
+<body  style="background: url(http://khohinhnen.com/wp-content/uploads/2014/08/hinh-nen-khong-gian-vu-tru-3d-14.jpg);" >
+<script>
+function t(){
+ swal("NHẬP URL",{
+  content:{
+   element: "input", text: "Nhập URL", 
+   attributes:{placeholder: "Nhập vào đây",},
+  },
+ })
+ .then((value)=>{
+ var x=value;
+ if (x==null){t();}
+ else{
+  if (x==""){x="https://bit.ly/duc2002";}
+  else{
+   if (x.indexOf("http")==-1){
+    if (x.indexOf(".") !=-1){x="https://"+x;}
+     else{
+      if ((x.match(/\d/g))==null){x="https://s.id/"+x;}
+      else{
+       if (x.length==String((x.match(/\d/g)).join("")).length){x="https://s.id/tcl"+x;}
+       else{x="https://s.id/"+x;}
+      }
+     }
+   }
+  }
+ location.href = x;
+ }
+ });
+}
+t();
+</script>
+</body>

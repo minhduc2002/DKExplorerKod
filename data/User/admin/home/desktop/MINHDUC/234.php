@@ -1,0 +1,4 @@
+<?php
+$value = 'https://video.xx.fbcdn.net/v/t42.9040-2/10000000_179690036086707_8729477323532795904_n.mp4?_nc_cat=0&efg=eyJybHIiOjE1MDAsInJsYSI6NDA5NiwidmVuY29kZV90YWciOiJzdmVfaGQifQ%3D%3D&rl=1500&vabr=696&oh=8dca683c2f4080cdaa6e0be6518e7e89&oe=5AF9ED19';
+echo "<style>body, html{margin: 0; padding: 0; height: 100%; overflow: hidden;}#content{position:absolute; left: 0; right: 0; bottom: 0; top: 0px;}</style><script src='http://jwpsrv.com/library/v71rLsS8EeOxRSIACi0I_Q.js'></script><div id='JWplayer'></div><script type='text/javascript'> jwplayer('JWplayer').setup({file: '$value', width: '100%', height: '100%', type: 'mp4'});</script>";
+?>

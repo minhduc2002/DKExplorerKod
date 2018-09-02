@@ -1,0 +1,31 @@
+<body>
+<h1>Số thứ nhất</h1>
+<textarea id="s1" rows="2" cols="150"></textarea>
+<h1>Số thứ hai</h1>
+<textarea id="s2" rows="2" cols="150"></textarea>
+<h1>Kết quả</h1>
+<textarea id="KQ" rows="20" cols="150"></textarea>
+<script src="https://unpkg.com/sweetalert@2.1.0/dist/sweetalert.min.js"></script>
+<script src="math.js"></script>
+<script>
+function xxxc() {
+var s1 = document.getElementById("s1").value;
+var s2 = document.getElementById("s2").value;
+document.getElementById("KQ").value = cong(s1, s2);
+}
+function xxxn() {
+var s1 = document.getElementById("s1").value;
+var s2 = document.getElementById("s2").value;
+document.getElementById("KQ").value = nhan(s1, s2);
+}
+function xxxlt() {
+var s1 = document.getElementById("s1").value;
+var s2 = document.getElementById("s2").value;
+document.getElementById("KQ").value = luy_thua(s1, s2);
+}
+</script>
+<br>
+<input type="button" onclick="xxxc()" value="Cộng">
+<input type="button" onclick="xxxn()" value="Nhân">
+<input type="button" onclick="xxxlt()" value="Lũy thừa">
+</body>

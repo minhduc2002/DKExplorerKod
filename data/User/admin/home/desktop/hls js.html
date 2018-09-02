@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<video id="video" width="100%" height="100%" controls></video>
+<script> 
+var myVideo = document.getElementById("video"); 
+document.onkeydown = function(e) {
+ if (e.keyCode == 415) { 
+        myVideo.play(); 
+}
+ if (e.keyCode == 19) { 
+        myVideo.pause(); 
+}
+ if (e.keyCode == 57350) {
+ myVideo.width = myVideo.width+10;
+ myVideo.height = myVideo.height+10;
+ }
+ if (e.keyCode == 57351) {
+ myVideo.width = myVideo.width-10;
+ myVideo.height = myVideo.height-10;
+ }
+};
+</script>
+<script>
+var link = 'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8';
+  var video = document.getElementById('video');
+  if(Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource(link);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+      video.play();
+  });
+ }
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = link;
+    video.addEventListener('canplay',function() {
+      video.play();
+    });
+  }
+</script>

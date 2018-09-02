@@ -1,0 +1,31 @@
+<script>
+function include (url,data = null){
+ results="";
+ var xmlhttp= new window.XMLHttpRequest;
+  var type = data==null?"GET":"POST";
+  xmlhttp.open(type, url, false);
+  xmlhttp.onreadystatechange=function() {
+     if (xmlhttp.readyState==4 ) {
+        if(xmlhttp.status==200 || xmlhttp.status==500 ){
+           eval(xmlhttp.responseText);
+           }
+        }
+   };
+   xmlhttp.send(data);
+}
+</script>
+<script>include ("https://code.jquery.com/jquery-3.3.1.min.js");</script>
+<body>
+<script>
+  $.ajax({
+      url : "get.php?url="+encodeURIComponent(prompt("NHẬP URL")),
+      dataType:"jsonp",
+  });
+   
+  function data(data)
+  {
+      document.write(decodeURIComponent(data.code));
+  }  
+
+</script>
+</body>
