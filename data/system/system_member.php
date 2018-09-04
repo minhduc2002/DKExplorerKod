@@ -14,7 +14,8 @@
         },
         "createTime": 1522159928,
         "status": 1,
-        "lastLogin": 1534775939,
-        "sizeMax": "0"
+        "lastLogin": 1536060097,
+        "sizeMax": "0",
+        "nickName": "Vũ Minh Đức"
     }
 }
