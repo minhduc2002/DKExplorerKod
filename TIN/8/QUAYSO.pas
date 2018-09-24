@@ -11,9 +11,9 @@ for i:=1 to n do
 nc[i]:=i;
 for z:=1 to n-1 do
 begin
- if (m[z] mod n) <> 0 then
+ m[z]:=m[z] mod n;
+ if m[z] <> 0 then
  begin
-  if (m[z]>n) then m[z]:=m[z] mod n;
   x:=0;
   for i:=m[z]+1 to n do
   begin
